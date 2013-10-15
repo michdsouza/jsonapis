@@ -1,0 +1,9 @@
+# minimal Rails specific artifacts
+db/*.sqlite3
+/log/*
+/tmp/*
+
+# bundler state
+/.bundle
+/vendor/bundle/
+/vendor/ruby/

@@ -64,3 +64,79 @@ Connecting to database specified by database.yml
 Started GET "/assets/rails.png" for 127.0.0.1 at 2013-10-14 18:20:22 -0600
 Connecting to database specified by database.yml
 Served asset /rails.png - 200 OK (2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20131015002153)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002153')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20131015002153)
+Migrating to CreatePosts (20131015002323)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "body" text, "tags" character varying(255), "category_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002323')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20131015002153)
+Migrating to CreatePosts (20131015002323)
+Migrating to CreateLikes (20131015002541)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "likes" ("id" serial primary key, "post_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002541')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20131015002153)
+Migrating to CreatePosts (20131015002323)
+Migrating to CreateLikes (20131015002541)
+Migrating to CreateUsers (20131015002637)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "likes" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+PG::DuplicateTable: ERROR:  relation "likes" already exists
+: CREATE TABLE "likes" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20131015002153)
+Migrating to CreatePosts (20131015002323)
+Migrating to CreateLikes (20131015002541)
+Migrating to CreateUsers (20131015002637)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002637')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (5038.1ms)[0m  DROP DATABASE IF EXISTS "jsonapis_development"
+PG::ObjectInUse: ERROR:  database "jsonapis_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+: DROP DATABASE IF EXISTS "jsonapis_development"
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (110.3ms)[0m  DROP DATABASE IF EXISTS "jsonapis_test"
+  [1m[36m (226.4ms)[0m  [1mCREATE DATABASE "jsonapis_test" ENCODING = 'UTF8'[0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "likes" ("id" serial primary key, "post_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "body" text, "tags" character varying(255), "category_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131015002637')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131015002153')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131015002323')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131015002541')
