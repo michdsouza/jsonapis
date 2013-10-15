@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  encoding: UTF8
+  database: jsonapis_development
+  host: localhost
+  pool: 5
+
+test: &test
+  adapter: postgresql
+  encoding: UTF8
+  database: jsonapis_development
+  host: localhost
+  pool: 5
+  min_messages: WARNING
