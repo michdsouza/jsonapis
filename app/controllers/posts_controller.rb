@@ -3,8 +3,14 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all
-		respond_with(@posts) do |format|
-      format.json { render :json => @posts.to_json }
-    end
+    render :json => @posts.to_json(
+         :only => [:title, :body, :created_at],
+         :include => {
+         		:category => { :only => [:name] },
+            :likes => { :only => [:created_at], :include => [:user] },
+            :user => { :only => [], :methods => [:full_name] },
+         },
+         :methods => [:likes_count]
+        )
 	end
 end
