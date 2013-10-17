@@ -294,3 +294,62 @@ Processing by MoviesController#index as HTML
   [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 4[0m
   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
 Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-16 21:13:48 -0600
+Connecting to database specified by database.yml
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.8ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 1 LIMIT 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered ratings/_rating.json.jbuilder (11.3ms)
+  Rendered movies/_movie.json.jbuilder (74.8ms)
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 2 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered ratings/_rating.json.jbuilder (1.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered ratings/_rating.json.jbuilder (1.1ms)
+  Rendered movies/_movie.json.jbuilder (6.1ms)
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 3
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered ratings/_rating.json.jbuilder (0.6ms)
+  Rendered movies/_movie.json.jbuilder (3.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 4[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered ratings/_rating.json.jbuilder (0.8ms)
+  Rendered movies/_movie.json.jbuilder (2.7ms)
+  Rendered movies/index.json.jbuilder (97.6ms)
+Completed 200 OK in 132ms (Views: 97.1ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-16 21:14:32 -0600
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.5ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 1 LIMIT 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered ratings/_rating.json.jbuilder (1.7ms)
+  Rendered movies/_movie.json.jbuilder (6.5ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 2 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered ratings/_rating.json.jbuilder (0.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered ratings/_rating.json.jbuilder (1.0ms)
+  Rendered movies/_movie.json.jbuilder (5.3ms)
+  [1m[36mGenre Load (0.6ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 3
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  Rendered ratings/_rating.json.jbuilder (1.0ms)
+  Rendered movies/_movie.json.jbuilder (6.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1
+  [1m[36mRating Load (0.6ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 4[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered ratings/_rating.json.jbuilder (1.3ms)
+  Rendered movies/_movie.json.jbuilder (5.1ms)
+  Rendered movies/index.json.jbuilder (29.4ms)
+Completed 200 OK in 35ms (Views: 28.3ms | ActiveRecord: 5.0ms)
