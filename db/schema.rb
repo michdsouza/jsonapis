@@ -13,28 +13,28 @@
 
 ActiveRecord::Schema.define(:version => 20131015002637) do
 
-  create_table "categories", :force => true do |t|
+  create_table "genres", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "likes", :force => true do |t|
-    t.integer  "post_id"
-    t.integer  "user_id"
+  create_table "movies", :force => true do |t|
+    t.string   "title"
+    t.text     "synopsis"
+    t.integer  "runtime"
+    t.integer  "genre_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "tags"
-    t.integer  "category_id"
+  create_table "ratings", :force => true do |t|
+    t.integer  "movie_id"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.decimal  "rating"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

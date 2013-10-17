@@ -1,0 +1,296 @@
+Connecting to database specified by database.yml
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateGenres (20131015002153)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002153')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMovies (20131015002323)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "movies" ("id" serial primary key, "title" character varying(255), "synopsis" text, "runtime" integer, "genre_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002323')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20131015002541)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "movie_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002541')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20131015002637)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002637')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateGenres (20131015002153)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002153')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMovies (20131015002323)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "movies" ("id" serial primary key, "title" character varying(255), "synopsis" text, "runtime" integer, "genre_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002323')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20131015002541)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "movie_id" integer, "user_id" integer, "rating" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002541')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20131015002637)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002637')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateGenres (20131015002153)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002153')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMovies (20131015002323)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "movies" ("id" serial primary key, "title" character varying(255), "synopsis" text, "runtime" integer, "genre_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002323')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20131015002541)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "movie_id" integer, "user_id" integer, "rating" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002541')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20131015002637)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002637')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (6.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:45:22 UTC +00:00], ["description", "Love is in the air"], ["name", "Romance"], ["updated_at", Thu, 17 Oct 2013 01:45:22 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:45:22 UTC +00:00], ["description", "Can you feel the intensity?"], ["name", "Drama"], ["updated_at", Thu, 17 Oct 2013 01:45:22 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:45:22 UTC +00:00], ["description", "Spooky!"], ["name", "Horror"], ["updated_at", Thu, 17 Oct 2013 01:45:22 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00], ["description", "Love is in the air"], ["name", "Romance"], ["updated_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00]]
+  [1m[35m (6.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00], ["description", "Can you feel the intensity?"], ["name", "Drama"], ["updated_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00], ["description", "Spooky!"], ["name", "Horror"], ["updated_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00], ["genre_id", 4], ["runtime", 167], ["synopsis", "At the close of WWII, a young nurse tends to a badly-burned plane crash victim. His past is shown in flashbacks, revealing an involvement in a fateful love affair."], ["title", "The English Patient"], ["updated_at", Thu, 17 Oct 2013 01:45:53 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["description", "Love is in the air"], ["name", "Romance"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[35m (6.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["description", "Can you feel the intensity?"], ["name", "Drama"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["description", "Spooky!"], ["name", "Horror"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["genre_id", 7], ["runtime", 167], ["synopsis", "At the close of WWII, a young nurse tends to a badly-burned plane crash victim. His past is shown in flashbacks, revealing an involvement in a fateful love affair."], ["title", "The English Patient"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["genre_id", 8], ["runtime", 194], ["synopsis", "A seventeen-year-old aristocrat, expecting to be married to a rich claimant by her mother, falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic."], ["title", "Titanic"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["genre_id", 9], ["runtime", 103], ["synopsis", "With a dead body lying between them, two men wake up in the secure lair of a serial killer who's been nicknamed 'Jigsaw'. The men must follow various rules and objectives if they wish to survive and win the deadly game set for them."], ["title", "Saw"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["genre_id", 9], ["runtime", 97], ["synopsis", "Freddy Krueger and Jason Voorhees return to terrorize the teenage population. Except this time, they're out to get each other, too."], ["title", "Freddy vs. Jason"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["first_name", "Michelle"], ["last_name", "D'Souza"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["first_name", "Eric"], ["last_name", "Chernuka"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["first_name", "John"], ["last_name", "Doe"], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["movie_id", 2], ["rating", #<BigDecimal:7fedf659bf00,'0.89E1',18(45)>], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["movie_id", 3], ["rating", #<BigDecimal:7fedf65abd60,'0.8699999999 999999E1',27(45)>], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["movie_id", 4], ["rating", #<BigDecimal:7fedf65b0e78,'0.65E1',18(45)>], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["movie_id", 3], ["rating", #<BigDecimal:7fedf65c1ed0,'0.5E1',9(45)>], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["user_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["movie_id", 5], ["rating", #<BigDecimal:7fedf65d2f78,'0.9E1',9(45)>], ["updated_at", Thu, 17 Oct 2013 01:46:10 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-16 19:47:20 -0600
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 4 LIMIT 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 1[0m
+Completed 500 Internal Server Error in 68ms
+
+NoMethodError (undefined method `user' for #<Movie:0x007fd42b31a3d8>):
+  app/controllers/movies_controller.rb:6:in `index'
+
+
+  Rendered /Users/mdsouza/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/mdsouza/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/mdsouza/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-16 19:48:23 -0600
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 4 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 1
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 7 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 2
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 8 LIMIT 1
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 3[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 9 LIMIT 1
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 4[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 9 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 5
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 8.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateGenres (20131015002153)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "genres" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002153')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMovies (20131015002323)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "movies" ("id" serial primary key, "title" character varying(255), "synopsis" text, "runtime" integer, "genre_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002323')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRatings (20131015002541)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "ratings" ("id" serial primary key, "movie_id" integer, "user_id" integer, "rating" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002541')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20131015002637)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131015002637')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["description", "Love is in the air"], ["name", "Romance"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["description", "Can you feel the intensity?"], ["name", "Drama"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "genres" ("created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["description", "Spooky!"], ["name", "Horror"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["genre_id", 1], ["runtime", 167], ["synopsis", "At the close of WWII, a young nurse tends to a badly-burned plane crash victim. His past is shown in flashbacks, revealing an involvement in a fateful love affair."], ["title", "The English Patient"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["genre_id", 2], ["runtime", 194], ["synopsis", "A seventeen-year-old aristocrat, expecting to be married to a rich claimant by her mother, falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic."], ["title", "Titanic"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["genre_id", 3], ["runtime", 103], ["synopsis", "With a dead body lying between them, two men wake up in the secure lair of a serial killer who's been nicknamed 'Jigsaw'. The men must follow various rules and objectives if they wish to survive and win the deadly game set for them."], ["title", "Saw"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "genre_id", "runtime", "synopsis", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["genre_id", 3], ["runtime", 97], ["synopsis", "Freddy Krueger and Jason Voorhees return to terrorize the teenage population. Except this time, they're out to get each other, too."], ["title", "Freddy vs. Jason"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["first_name", "Michelle"], ["last_name", "D'Souza"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["first_name", "Eric"], ["last_name", "Chernuka"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "first_name", "last_name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["first_name", "John"], ["last_name", "Doe"], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["movie_id", 1], ["rating", #<BigDecimal:7fa216bffe90,'0.89E1',18(45)>], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["movie_id", 2], ["rating", #<BigDecimal:7fa216c0fcf0,'0.8699999999 999999E1',27(45)>], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["movie_id", 3], ["rating", #<BigDecimal:7fa216c14e08,'0.65E1',18(45)>], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["movie_id", 2], ["rating", #<BigDecimal:7fa216c25e60,'0.5E1',9(45)>], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ratings" ("created_at", "movie_id", "rating", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["movie_id", 4], ["rating", #<BigDecimal:7fa216c36f08,'0.9E1',9(45)>], ["updated_at", Thu, 17 Oct 2013 01:49:33 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-16 19:49:42 -0600
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 1 LIMIT 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 2 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 3
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 4[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 90ms (Views: 0.1ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-16 19:51:25 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 1 LIMIT 1
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 2 LIMIT 1[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 3
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" = 3 LIMIT 1
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" = 4[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 7.7ms)
