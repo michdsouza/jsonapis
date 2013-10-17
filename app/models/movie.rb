@@ -5,6 +5,6 @@ class Movie < ActiveRecord::Base
 	has_many :ratings
 
 	def average_rating
-		10.0
+		9.0
 	end
 end
