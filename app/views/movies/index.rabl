@@ -8,3 +8,7 @@ end
 child :ratings, :object_root => false do
   extends "ratings/rating"
 end
+
+node(:average_rating) { |x|
+  x.average_rating
+}
