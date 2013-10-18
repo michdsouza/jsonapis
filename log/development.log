@@ -1264,3 +1264,23 @@ Processing by MoviesController#index as HTML
   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
   [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
 Completed 200 OK in 134ms (Views: 16.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-17 21:41:50 -0600
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.5ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 61ms (Views: 10.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-17 21:42:05 -0600
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 56ms (Views: 9.8ms | ActiveRecord: 9.3ms)
