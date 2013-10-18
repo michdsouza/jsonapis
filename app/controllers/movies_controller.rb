@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 	respond_to :json
 
 	def index
-		@movies = Movie.all
+		@movies = Movie.includes(:genre, :ratings => [:user]).all
       render :json => @movies.to_json(
         :only => [:title, :synopsis, :runtime],
         :include => {
