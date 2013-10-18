@@ -1,14 +1,10 @@
 collection @movies, :object_root => false
-
-attributes :id, :title, :synopsis, :runtime
+extends('movies/movie')
 
 child :genre do
-  attributes :name, :description
+  extends "genres/genre"
 end
 
 child :ratings, :object_root => false do
-  attributes :rating
-  child :user do
-    attributes :full_name
-  end
+  extends "ratings/rating"
 end
