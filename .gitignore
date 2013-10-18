@@ -7,3 +7,4 @@ db/*.sqlite3
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
+/log/development.log
