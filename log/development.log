@@ -1284,3 +1284,978 @@ Processing by MoviesController#index as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
 Completed 200 OK in 56ms (Views: 9.8ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-10-22 08:27:55 -0600
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.1ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (1.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (1.8ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+Completed 500 Internal Server Error in 145ms
+
+ActionView::MissingTemplate (Missing template movies/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/ericchernuka/AppColony/meetup/jsonapis/app/views"
+):
+  actionpack (3.2.14) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.14) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__954502996500241129__process_action__4163236308382406987__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2039299445164567233__call__1538362535351115217__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.6ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:28:00 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.5ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::MissingTemplate (Missing template movies/index, application/index with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/ericchernuka/AppColony/meetup/jsonapis/app/views"
+):
+  actionpack (3.2.14) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.14) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__954502996500241129__process_action__4163236308382406987__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2039299445164567233__call__1538362535351115217__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:28:07 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 61ms (Views: 13.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:28:18 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 85ms (Views: 10.7ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:31:04 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+Completed 500 Internal Server Error in 54ms
+
+ActionView::MissingTemplate (Missing template movies/index, application/index with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/ericchernuka/AppColony/meetup/jsonapis/app/views"
+):
+  actionpack (3.2.14) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.14) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__954502996500241129__process_action__4163236308382406987__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2039299445164567233__call__1538362535351115217__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:31:10 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+Completed 500 Internal Server Error in 78ms
+
+ActionView::MissingTemplate (Missing template movies/index, application/index with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/ericchernuka/AppColony/meetup/jsonapis/app/views"
+):
+  actionpack (3.2.14) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.14) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__954502996500241129__process_action__4163236308382406987__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2039299445164567233__call__1538362535351115217__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/ericchernuka/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:31:25 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 78ms (Views: 36.4ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:31:35 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 56ms (Views: 10.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:31:50 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 91ms (Views: 7.2ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:32:06 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 47ms
+
+LoadError (Expected /Users/ericchernuka/AppColony/meetup/jsonapis/app/serializers/rating_serializer.rb to define RatingSerializer):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:32:22 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 41.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:33:35 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.6ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 70ms (Views: 13.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:33:48 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 3.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:34:05 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 46ms (Views: 3.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:34:10 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 3.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:34:27 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 73ms
+
+SyntaxError (/Users/ericchernuka/AppColony/meetup/jsonapis/app/serializers/movie_serializer.rb:2: syntax error, unexpected ':', expecting keyword_end
+  root: false
+       ^):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:35:20 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 3.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:35:29 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (1.1ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:35:31 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 85ms (Views: 3.3ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:35:54 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 56ms (Views: 3.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:36:02 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 73ms (Views: 3.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:36:06 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 54ms (Views: 4.8ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:37:37 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.7ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 67ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c3415b0>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:37:48 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 81ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23ae401e8>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:29 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 47ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c640bf8>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:30 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23b20ab98>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:31 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.6ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c39b7e0>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.7ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:31 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.7ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.9ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c550978>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:35 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 79ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c751c90>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:40 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 49ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c513d70>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:44 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 81ms
+
+NoMethodError (undefined method `object' for #<Rating:0x007fc23c2fb150>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:56 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 73ms (Views: 30.3ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:38:59 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 48ms
+
+NoMethodError (undefined method `object' for #<Genre:0x007fc23c463380>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:03 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 84ms
+
+NoMethodError (undefined method `object' for #<Rating:0x007fc23c14ab80>):
+  app/controllers/movies_controller.rb:5:in `index'
+
+
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/ericchernuka/.rvm/gems/ruby-2.0.0-p247@json-apis/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:12 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 49ms (Views: 3.2ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:28 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 50ms (Views: 6.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:42 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 96ms (Views: 9.9ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:48 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 64ms (Views: 10.9ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:49 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:49 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:39:50 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 12ms (Views: 6.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:40:00 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 46ms (Views: 3.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:40:03 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (1.5ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 97ms (Views: 10.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:40:09 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 60ms (Views: 7.8ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:42:59 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 95ms (Views: 2.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:43:06 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:43:13 -0600
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mGenre Load (0.4ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 2.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2013-10-22 08:43:16 -0600
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN (1, 2, 3)[0m
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."movie_id" IN (1, 2, 3, 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 47ms (Views: 2.2ms | ActiveRecord: 7.6ms)
